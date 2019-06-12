@@ -1,0 +1,23 @@
+common: &common
+  adapter: mysql2
+  database: hsd_dev
+  host: 127.0.0.1
+  port:
+  username: root
+  password: jclub
+  charset: utf8
+  collation: utf8_bin
+  variables:
+    sql_mode: 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+
+development:
+  <<: *common
+
+test:
+
+  database: jclub_test
+  <<: *common
+
+production:
+  <<: *common
+
